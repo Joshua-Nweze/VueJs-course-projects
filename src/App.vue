@@ -1,16 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h1>My first vue project</h1>
+    <h3>A counter app</h3>
+
+    <div>{{ count }}</div>
+
+    <div class="btn-container">
+      <button @click="decrementCount">Decrement count</button>
+      <button @click="incrementCount">Increment count</button>
+    </div>
+  </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script setup>
+import { ref } from 'vue';
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+
+let count = ref(0)
+
+function decrementCount() {
+  if (count.value > 0) {
+    count.value--
   }
+}
+
+function incrementCount() {
+  count.value++
 }
 </script>
 
@@ -22,5 +37,15 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.btn-container{
+  display: flex;
+  justify-content: center;
+}
+
+.btn-container button{
+  padding: 5px;
+  margin: 5px;
 }
 </style>
