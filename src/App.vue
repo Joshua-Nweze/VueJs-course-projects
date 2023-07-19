@@ -26,7 +26,7 @@ let showWeatherDetails = ref(false)
 
 function search(location) {
     if (location.trim() !== '') {
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${process.env.VUE_APP_API_KEY}`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=8368787296b15cf1c0f66331292a441d`)
             .then(res => res.json())
             .then(data => {
                 weatherData.data = data;
