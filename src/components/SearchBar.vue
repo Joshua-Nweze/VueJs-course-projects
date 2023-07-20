@@ -23,7 +23,6 @@
 import { reactive, ref } from 'vue';
 
 let location = ref('')
-console.log(location.value)
 
 </script>
 
