@@ -2,42 +2,15 @@
   <div class="container">
     <div class="row justify-content-center pt-5">
       <div class="col-12 col-md-8 col-lg-6">
-        <SearchBar @search="search"/>
-        <div>
-          <WeatherDetails :weather="weatherData" v-if="showWeatherDetails"/>
-
-          <div v-else>
-            Search a location to see it's current weather
-        </div>
-        </div>
+        <Nav />
+        <router-view />
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { reactive, ref } from 'vue';
-
-import SearchBar from './components/SearchBar';
-import WeatherDetails from './components/WeatherDetails';
-
-let weatherData = reactive({data: null})
-let showWeatherDetails = ref(false)
-
-function search(location) {
-    if (location.trim() !== '') {
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${process.env.VUE_APP_API_KEY}`)
-            .then(res => res.json())
-            .then(data => {
-                weatherData.data = data;
-                showWeatherDetails.value = true
-            })
-            .catch(e => console.log(e))
-    } else {
-      showWeatherDetails.value = false
-    }
-}
-
+import Nav from "./components/Nav.vue";
 </script>
 
 <style>
@@ -46,19 +19,8 @@ function search(location) {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: white;
+  color: #151638;
   min-height: 100vh;
-  background: #151638;
-}
-
-
-.form-control:focus {
-  box-shadow: none;
-  border-color: #f8f9fa;
-  color: white;
-}
-
-.form-control{
-  color: white;
+  background: #ffd945;
 }
 </style>

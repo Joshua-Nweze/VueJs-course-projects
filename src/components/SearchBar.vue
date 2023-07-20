@@ -4,14 +4,14 @@
             <input
              type="text"
              class="form-control search"
-             placeholder="Search location"
-             v-model="location"
-             @keydown.enter="$emit('search', location)"
+             placeholder="Search a food recipe"
+             v-model="food"
+             @keydown.enter="$emit('search', food)"
             >
 
             <button
              class="input-group-text"
-             @click="$emit('search', location)"
+             @click="$emit('search', food)"
             >
                 <i class="bi bi-search"></i>
             </button>
@@ -22,8 +22,8 @@
 <script setup>
 import { reactive, ref } from 'vue';
 
-let location = ref('')
-console.log(location.value)
+let food = ref('')
+
 
 </script>
 
@@ -32,11 +32,14 @@ console.log(location.value)
     transform: rotate(90deg)
 }
 
-.search {
+.search:focus {
+    box-shadow: none;
+}
+/* .search {
     background-color: #2f327f;
 }
 
 .search::placeholder {
     color: white;
-}
+} */
 </style>
