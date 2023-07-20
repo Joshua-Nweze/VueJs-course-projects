@@ -14,11 +14,20 @@ const routes = [
     {
         path: '/about',
         name: 'about',
-        component: () => import(/* webpackChunkName: "cart" */ "../views/AboutView"),
+        component: () => import(/* webpackChunkName: "about" */ "../views/AboutView"),
         meta: {
             title: 'About Page - Recepe Finder'
         }
     },
+
+    {
+        path: '/:pathMatch(.*)*', 
+        name: '404',
+        component: () => import(/* webpackChunkName: "404" */ "../components/404"),
+        meta: {
+          title: '404 Page - Recepe Finder'
+        }
+      }
 ]
 
 const router = createRouter({
