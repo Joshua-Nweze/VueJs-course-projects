@@ -8,8 +8,6 @@
 </template>
 
 <script setup>
-// import Recipe from '../components/Recipe'
-// import Loader from '../components/Loader'
 import TodaysDeals from '@/components/TodaysDeals.vue';
 
 </script>
