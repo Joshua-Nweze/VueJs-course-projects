@@ -25,7 +25,5 @@
 </template>
 
 <script setup>
-import Btn from './Btn.vue'
-
 defineProps(['products'])
 </script>
