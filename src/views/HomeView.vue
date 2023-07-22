@@ -4,9 +4,6 @@
 
         <TodaysDeals />
 
-        <!-- <Recipe :recipes="recipes" v-if="showRecipes"/>
-        <Loader v-if="loading" /> -->
-
     </div>
 </template>
 
