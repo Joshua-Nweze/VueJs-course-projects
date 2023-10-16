@@ -46,7 +46,7 @@ function shuffleArray(array) {
 
 async function getQuestions() {
     try {
-        if (amount.value < 1) {
+        if (amount.value < 1 || isNaN(amount.value)) {
             alert('Invalid number of questions')
             return
         }
